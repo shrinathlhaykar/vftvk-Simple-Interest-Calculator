@@ -1,17 +1,19 @@
 function compute()
 {
-    p = document.getElementById("principal").value;
-    r = document.getElementById("rate").value;
-    t = document.getElementById("years").value;
-    si=p*r*t/100;
-    document.getElementById ('num1').innerHTML ="If you deposit "+p;
-    document.getElementById ('num2').innerHTML ="at an interest rate: "+r;
-
-    document.getElementById ('num3').innerHTML ="You will receive,"+si;
-    var d = new Date();
-    var n = d.getFullYear();
-    var x= n+t;
-    document.getElementById ('num4').innerHTML ="in the year"+x;
-
+     var principal = document.getElementById("principal").value; 
+     var years = document.getElementById("years").value;
+     var rate = document.getElementById("rate").value;
+     var future = +years + 2021;
+     var int = principal * years * rate/100;
     
-}   
+                if (principal <= 0) {
+                    alert("Please enter positive value");
+                    document.getElementById("principal").focus();
+                    }
+                    
+                    else{    
+                    interest =document.getElementById("result"); 
+               interest.innerHTML = "If you deposit " + (principal) + "," + ("<br>") + "at an interest rate of " + (rate) + "%." + ("<br>") + "You will receive an amount of " + (int) + "," +("<br>") + "in the year " + (future);
+                    }
+            
+}
